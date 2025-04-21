@@ -2,15 +2,20 @@
 Time the queries in the queries directory.
 """
 
+import os
 import pathlib
 import sqlite3
 
 import db_query_profiler
+import dotenv
 import duckdb
 import psycopg2
 import pyodbc
+import snowflake.connector
 
 from src import SRC
+
+dotenv.load_dotenv()
 
 HERE = pathlib.Path(__file__).resolve().parent
 DB_PATH = SRC / "resources/data"
@@ -42,9 +47,28 @@ def mssql_connector() -> Connection:
 def postgres_connector() -> Connection:
     # TODO: Grab from `src/metabase/databases.toml`
     connection = psycopg2.connect(
-        "dbname=postgres user=postgres password=Test@12345"
+        " ".join(
+            [
+                "host=localhost",
+                "port=5432",
+                "dbname=postgres",
+                "user=postgres",
+                "password=Test@12345",
+            ]
+        )
     )
-    return connection.cursor()
+
+    return connection.cursor()  # type: ignore
+
+
+def snowflake_connector() -> Connection:
+    connection = snowflake.connector.connect(
+        account=os.environ["SNOWFLAKE__ACCOUNT"],
+        user=os.environ["SNOWFLAKE__USERNAME"],
+        password=os.environ["SNOWFLAKE__PASSWORD"],
+    )
+
+    return connection.cursor()  # type: ignore
 
 
 def main() -> None:
@@ -56,13 +80,14 @@ def main() -> None:
         "duckdb": duckdb_connector,
         "mssql": mssql_connector,
         "postgres": postgres_connector,
-    }["duckdb"]
+        "snowflake": snowflake_connector,
+    }["duckdb"]()
 
     setup_sql = (HERE / "setup.sql").read_text(encoding="utf-8")
-    db_conn().execute(setup_sql)
+    db_conn.execute(setup_sql)
 
     db_query_profiler.time_queries(
-        conn=db_conn(),
+        conn=db_conn,
         repeat=1_000,
         directory=SRC / "profiler/queries",
     )
