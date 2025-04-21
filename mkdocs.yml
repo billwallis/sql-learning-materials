@@ -29,7 +29,14 @@ theme:
 nav:
   - Home: index.md
   - Ultimate SQL Setup Guide:
-      - ultimate-sql-setup-guide/ultimate-sql-setup-guide.md
+      - "Introduction": ultimate-sql-setup-guide/00-introduction.md
+      - "Online sites": ultimate-sql-setup-guide/01-online-sites.md
+      - "Managed services": ultimate-sql-setup-guide/02-managed-services.md
+      - "Single-file databases": ultimate-sql-setup-guide/03-single-file-databases.md
+      - "DBMS system (locally installed)": ultimate-sql-setup-guide/04-dbms-system-locally-installed.md
+      - "DBMS system (Docker)": ultimate-sql-setup-guide/05-dbms-system-docker.md
+      - "Self-managed services": ultimate-sql-setup-guide/06-self-managed-services.md
+      - "Connecting to databases": ultimate-sql-setup-guide/99-connecting-to-databases.md
   - From Excel to SQL:
       - from-excel-to-sql/from-excel-to-sql.md
       - Getting Started:
