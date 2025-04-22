@@ -22,11 +22,12 @@ services:
       MSSQL_PID: Developer
 
   mysql:
-    image: mysql:8.4.2
+    image: mysql:8.4.3
     container_name: MySQL
     ports: ["3306:3306"]
     profiles: ["skip"]
     environment:
+      # username is `root`
       MYSQL_ROOT_PASSWORD: Test@12345
 
   postgres:
@@ -36,8 +37,8 @@ services:
     ports: ["5432:5432"]
     profiles: ["build"]
     environment:
-      POSTGRES_PASSWORD: Test@12345
       POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: Test@12345
 
   metabase:
     image: metabase/metabase:latest
