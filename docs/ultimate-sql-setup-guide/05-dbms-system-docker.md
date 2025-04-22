@@ -58,7 +58,7 @@ Then, you can launch these with `docker compose up` and connect to them in the w
 
 The `volumes` property is important for persisting data on the machine that Docker is running on between runs. If you don't set this, the data will be lost when the container is stopped.
 
-Here's an example of how to connect to these in IntelliJ:
+Here's an example of how to connect to these in [IntelliJ](https://www.jetbrains.com/):
 
 <center>
 
