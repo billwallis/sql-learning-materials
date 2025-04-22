@@ -8,6 +8,7 @@ import sqlite3
 import db_query_profiler
 import dotenv
 import duckdb
+import mysql.connector
 import psycopg2
 import pyodbc
 import snowflake.connector
@@ -33,11 +34,25 @@ def mssql_connector() -> Connection:
     connection = pyodbc.connect(
         "Driver={SQL Server};"
         "Server=localhost;"
+        "Port=1433;"
         "Database=AdventureWorks2022;"
         "UID=SA;"
         "PWD=Test@12345;"
     )
 
+    return connection.cursor()  # type: ignore
+
+
+def mysql_connector() -> Connection:
+    connection = mysql.connector.connect(
+        host="127.0.0.1",
+        port=3306,
+        user="root",
+        password="Test@12345",  # noqa: S106
+        use_pure=True,
+    )
+
+    # return connection
     return connection.cursor()  # type: ignore
 
 
@@ -76,6 +91,7 @@ def main() -> None:
         "sqlite": sqlite_connector,
         "duckdb": duckdb_connector,
         "mssql": mssql_connector,
+        "mysql": mysql_connector,
         "postgres": postgres_connector,
         "snowflake": snowflake_connector,
     }["sqlite"]()
