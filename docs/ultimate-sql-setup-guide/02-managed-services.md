@@ -77,7 +77,7 @@ def main() -> None:
 
     with db_conn.cursor() as cursor:
         cursor.execute("select version()")
-        print(cursor.fetchone())
+        print(cursor.fetchone()[0])
 
 
 if __name__ == "__main__":
@@ -118,7 +118,7 @@ def main() -> None:
 
     with db_conn.cursor() as cursor:
         cursor.execute("select current_version()")
-        print(cursor.fetchone())
+        print(cursor.fetchone()[0])
 
 
 if __name__ == "__main__":
