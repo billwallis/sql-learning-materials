@@ -58,7 +58,7 @@ Here's an example of how to use these details in [IntelliJ](https://www.jetbrain
 
 <center>
 
-![postgres-aws-intellij.png](./resources/postgres-aws-intellij.png)
+![postgres-aws-intellij.png](./resources/postgres-aws-intellij.png){: style="width:500px"}
 
 </center>
 
@@ -110,7 +110,11 @@ The account identifier for the URL above is `abcdxyz-mn12345`.
 
 Here's an example of how to use these details in [IntelliJ](https://www.jetbrains.com/):
 
-![snowflake-intellij.png](./resources/snowflake-intellij.png)
+<center>
+
+![snowflake-intellij.png](./resources/snowflake-intellij.png){: style="width:500px"}
+
+</center>
 
 ...and similarly, how to use them in Python with [the snowflake-connector-python library](https://docs.snowflake.com/en/user-guide/python-connector.html):
 

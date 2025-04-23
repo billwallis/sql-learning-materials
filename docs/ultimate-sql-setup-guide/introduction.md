@@ -23,7 +23,7 @@ This guide will take you through some options and help you figure out which opti
 5. [DBMS systems (locally installed)](./04-dbms-system-locally-installed.md) → _"I want a local database that I install myself"_
 6. [DBMS systems (via Docker)](./05-dbms-system-docker.md) → _"I want local databases without having to install vendor-specific software"_
 7. [Self-managed services](./06-self-managed-services.md) → _"I want a self-managed remote database that can be accessed from multiple machines"_
-8. [Extra: connecting to databases](./99-connecting-to-databases.md)
+8. [Extra: connecting to databases](connecting-to-databases.md)
 
 ---
 
