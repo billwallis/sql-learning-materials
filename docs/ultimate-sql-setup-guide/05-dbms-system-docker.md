@@ -62,9 +62,9 @@ Here's an example of how to connect to these in [IntelliJ](https://www.jetbrains
 
 <center>
 
-![sql-server-docker-intellij.png](./resources/sql-server-docker-intellij.png)
-![mysql-docker-intellij.png](./resources/mysql-docker-intellij.png)
-![postgres-docker-intellij.png](./resources/postgres-docker-intellij.png)
+![sql-server-docker-intellij.png](./resources/sql-server-docker-intellij.png){: style="width:500px"}
+![mysql-docker-intellij.png](./resources/mysql-docker-intellij.png){: style="width:500px"}
+![postgres-docker-intellij.png](./resources/postgres-docker-intellij.png){: style="width:500px"}
 
 </center>
 
