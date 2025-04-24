@@ -17,7 +17,7 @@ Some popular managed services for each are below:
 | Application backends                                                       | Data warehouses                               |
 | -------------------------------------------------------------------------- | --------------------------------------------- |
 | [AWS Options](https://aws.amazon.com/rds/)                                 | [Databricks](https://www.databricks.com/)     |
-| [MicroSoft Options](https://azure.microsoft.com/en-gb/products/#databases) | [Snowflake](https://www.snowflake.com/)       |
+| [Microsoft Options](https://azure.microsoft.com/en-gb/products/#databases) | [Snowflake](https://www.snowflake.com/)       |
 | [Google Options](https://cloud.google.com/sql)                             | [BigQuery](https://cloud.google.com/bigquery) |
 |                                                                            | [Firebolt](https://www.firebolt.io/)          |
 |                                                                            | [MotherDuck](https://motherduck.com/)         |
