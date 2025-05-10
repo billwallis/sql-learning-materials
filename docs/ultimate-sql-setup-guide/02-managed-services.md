@@ -8,7 +8,7 @@ Managed services are usually very little work to get started with, and there is 
 
 While they can be expensive, they are a popular option for companies and often have their own web GUIs that you can use.
 
-There are options for OLTP workloads (application backends) and OLAP workloads (data warehouses). Software engineers will mainly write SQL for OLTP workloads, while data folk (engineers, analysts, scientists) will mainly write SQL for OLAP workloads.
+There are options for [OLTP](https://en.wikipedia.org/wiki/Online_transaction_processing) workloads (application backends) and [OLAP](https://en.wikipedia.org/wiki/Online_analytical_processing) workloads (data warehouses). Software engineers will mainly write SQL for OLTP workloads, while data folk (engineers, analysts, scientists) will mainly write SQL for OLAP workloads.
 
 Some popular managed services for each are below:
 
