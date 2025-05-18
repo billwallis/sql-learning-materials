@@ -8,7 +8,7 @@
 >
 > The database versions used for the solutions can be found at the top of the following page:
 >
-> - [https://github.com/Bilbottom/sql-learning-materials/blob/main/README.md](https://github.com/Bilbottom/sql-learning-materials/blob/main/README.md)
+> - [https://github.com/billwallis/sql-learning-materials/blob/main/README.md](https://github.com/billwallis/sql-learning-materials/blob/main/README.md)
 
 ## Problems
 
@@ -59,8 +59,8 @@ To see the questions grouped by topic, head over to the [topics page](topics.md)
 
 ## Looking for more?
 
-The repo [Bilbottom/sql-models](https://github.com/Bilbottom/sql-models) has a collection of custom SQL models, some of which come with exercises.
+The repo [billwallis/sql-models](https://github.com/billwallis/sql-models) has a collection of custom SQL models, some of which come with exercises.
 
 For example, the **loans** model has exercises ranging from very easy to very hard:
 
-- [https://github.com/Bilbottom/sql-models/tree/main/sql_models/loans#exercises-](https://github.com/Bilbottom/sql-models/tree/main/sql_models/loans#exercises-)
+- [https://github.com/billwallis/sql-models/tree/main/sql_models/loans#exercises-](https://github.com/billwallis/sql-models/tree/main/sql_models/loans#exercises-)

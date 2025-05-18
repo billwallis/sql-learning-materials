@@ -1,9 +1,9 @@
 ---
 site_name: SQL Learning Materials
-site_url: https://github.com/Bilbottom/sql-learning-materials/docs/
+site_url: https://github.com/billwallis/sql-learning-materials/docs/
 site_description: SQL scripts that demonstrate various features and concepts.
-site_author: Bilbottom
-repo_url: https://github.com/Bilbottom/sql-learning-materials/
+site_author: billwallis
+repo_url: https://github.com/billwallis/sql-learning-materials/
 
 theme:
   name: material

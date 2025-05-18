@@ -3,7 +3,7 @@
 [![Python](https://img.shields.io/badge/Python-3.11+-blue.svg)](https://www.python.org/downloads/)
 [![uv](https://img.shields.io/endpoint?url=https://raw.githubusercontent.com/astral-sh/uv/main/assets/badge/v0.json)](https://github.com/astral-sh/uv)
 [![Docker](https://img.shields.io/badge/Docker-24.0.5-blue.svg)](https://www.docker.com/)
-[![GitHub last commit](https://img.shields.io/github/last-commit/Bilbottom/sql-learning-materials)](https://shields.io/badges/git-hub-last-commit-by-committer)
+[![GitHub last commit](https://img.shields.io/github/last-commit/billwallis/sql-learning-materials)](https://shields.io/badges/git-hub-last-commit-by-committer)
 
 [![SQL Server](https://img.shields.io/badge/SQL%20Server-2022-teal.svg)](https://www.microsoft.com/en-gb/sql-server/sql-server-downloads)
 [![MySQL](https://img.shields.io/badge/MySQL-8.4-teal.svg)](https://dev.mysql.com/downloads/mysql/)
@@ -22,7 +22,7 @@ SQL scripts that demonstrate various features and concepts.
 
 This project contains a bunch of SQL learning materials aimed at different levels of experience and covering a variety of topics. It focuses on just writing `SELECT` statements so there will be very few resources for anything else.
 
-Jump into [https://bilbottom.github.io/sql-learning-materials/](https://bilbottom.github.io/sql-learning-materials/) to see the summary of what's covered in this project, and continue below for instructions on how to set up the databases.
+Jump into [https://billwallis.github.io/sql-learning-materials/](https://billwallis.github.io/sql-learning-materials/) to see the summary of what's covered in this project, and continue below for instructions on how to set up the databases.
 
 ## Acknowledgements
 
