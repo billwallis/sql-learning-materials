@@ -6,10 +6,10 @@ build-backend = "setuptools.build_meta"
 name = "sql-learning-materials"
 version = "0.0.0"
 description = "SQL scripts that demonstrate various features and concepts."
-authors = [{name = "Bilbottom"}]
+authors = [{name = "billwallis"}]
 readme = "README.md"
 keywords = ["sql", "sql-server", "postgres", "sqlite", "duckdb"]
-urls = { Repository = "https://github.com/Bilbottom/sql-learning-materials" }
+urls = { Repository = "https://github.com/billwallis/sql-learning-materials" }
 requires-python = ">=3.11,<4.0"
 dependencies = [
     "db-query-profiler>=0.0.6",
