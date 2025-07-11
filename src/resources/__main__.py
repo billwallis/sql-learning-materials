@@ -62,7 +62,8 @@ def _create_database__duckdb(
     :param database_file: The path to the database file.
     :param sql_file: The path to the SQL file to execute.
     """
-    import duckdb
+
+    import duckdb  # noqa: PLC0415
 
     # database, schema = database_file.name.split(":")
     #
