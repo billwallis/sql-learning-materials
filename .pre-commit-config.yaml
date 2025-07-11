@@ -23,7 +23,7 @@ repos:
       - id: check-ast
 
   - repo: https://github.com/astral-sh/uv-pre-commit
-    rev: 0.6.12 # reminder: keep aligned with the GitHub actions
+    rev: 0.7.19 # reminder: keep aligned with the GitHub actions
     hooks:
       - id: uv-lock
 
@@ -34,7 +34,7 @@ repos:
       - id: prettier
 
   - repo: https://github.com/astral-sh/ruff-pre-commit
-    rev: v0.11.4
+    rev: v0.12.2
     hooks:
       - id: ruff
         args: ["--fix"]

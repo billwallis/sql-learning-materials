@@ -130,7 +130,8 @@ def test__resource__get_resource(
     """
     Test the ``get_resource`` method of the ``Resource`` class.
     """
-    import urllib.request
+
+    import urllib.request  # noqa: PLC0415
 
     def mock_urlretrieve(url, filename):
         """
