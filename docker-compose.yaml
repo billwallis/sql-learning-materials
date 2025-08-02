@@ -10,6 +10,11 @@ services:
     container_name: ClickHouse
     ports: ["8123:8123"]
     profiles: ["skip"]
+    volumes:
+      - &shared-volume
+        type: bind
+        source: ./dockerfiles/shared
+        target: /shared/
 
   mssql:
     build: { context: ".", dockerfile: "dockerfiles/mssql.Dockerfile" }
@@ -20,6 +25,7 @@ services:
     environment:
       ACCEPT_EULA: "Y"
       MSSQL_PID: Developer
+    volumes: [*shared-volume]
 
   mysql:
     image: mysql:8.4.2
@@ -28,6 +34,7 @@ services:
     profiles: ["skip"]
     environment:
       MYSQL_ROOT_PASSWORD: Test@12345
+    volumes: [*shared-volume]
 
   postgres:
     build: { context: ".", dockerfile: "dockerfiles/postgres.Dockerfile" }
@@ -38,6 +45,7 @@ services:
     environment:
       POSTGRES_PASSWORD: Test@12345
       POSTGRES_USER: postgres
+    volumes: [*shared-volume]
 
   metabase:
     image: metabase/metabase:latest
