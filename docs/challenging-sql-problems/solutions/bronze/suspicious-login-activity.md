@@ -30,6 +30,11 @@ Some SQL solutions per database are provided below.
 --8<-- "docs/challenging-sql-problems/solutions/bronze/suspicious-login-activity--duckdb.sql"
 
 <!-- prettier-ignore -->
+> SUCCESS: **PostgreSQL**
+>
+--8<-- "docs/challenging-sql-problems/solutions/bronze/suspicious-login-activity--postgres.sql"
+
+<!-- prettier-ignore -->
 > SUCCESS: **SQL Server**
 >
---8<-- "docs/challenging-sql-problems/solutions/bronze/suspicious-login-activity--sql-server.sql"
+--8<-- "docs/challenging-sql-problems/solutions/bronze/suspicious-login-activity--tsql.sql"

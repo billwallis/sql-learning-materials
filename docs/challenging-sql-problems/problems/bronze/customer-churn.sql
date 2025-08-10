@@ -2,7 +2,7 @@
 create table user_history (
     user_id          int primary key,
     last_update      date not null,
-    activity_history bigint not null,
+    activity_history bigint not null
 );
 insert into user_history
 values

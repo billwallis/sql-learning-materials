@@ -7,7 +7,7 @@ from invoices
         on  invoices.invoice_datetime >= exchange_rates.from_datetime
         and invoices.invoice_currency = exchange_rates.to_currency
         and exchange_rates.from_currency = 'USD'
-where invoices.is_paid = false
+where not invoices.is_paid
 group by invoices.invoice_currency
 order by invoices.invoice_currency
 ```

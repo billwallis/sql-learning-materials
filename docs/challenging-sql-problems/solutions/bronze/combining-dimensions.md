@@ -43,3 +43,13 @@ Some SQL solutions per database are provided below.
 > SUCCESS: **DuckDB**
 >
 --8<-- "docs/challenging-sql-problems/solutions/bronze/combining-dimensions--duckdb.sql"
+
+<!-- prettier-ignore -->
+> SUCCESS: **PostgreSQL**
+>
+--8<-- "docs/challenging-sql-problems/solutions/bronze/combining-dimensions--postgres.sql"
+
+<!-- prettier-ignore -->
+> SUCCESS: **SQL Server**
+>
+--8<-- "docs/challenging-sql-problems/solutions/bronze/combining-dimensions--tsql.sql"
