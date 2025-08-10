@@ -27,3 +27,13 @@ Some SQL solutions per database are provided below.
 > SUCCESS: **DuckDB**
 >
 --8<-- "docs/challenging-sql-problems/solutions/bronze/customer-churn--duckdb.sql"
+
+<!-- prettier-ignore -->
+> SUCCESS: **PostgreSQL**
+>
+--8<-- "docs/challenging-sql-problems/solutions/bronze/customer-churn--postgres.sql"
+
+<!-- prettier-ignore -->
+> SUCCESS: **SQL Server**
+>
+--8<-- "docs/challenging-sql-problems/solutions/bronze/customer-churn--tsql.sql"
