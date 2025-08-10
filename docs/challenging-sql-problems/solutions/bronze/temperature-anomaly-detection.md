@@ -43,4 +43,4 @@ Some SQL solutions per database are provided below.
 <!-- prettier-ignore -->
 > SUCCESS: **SQL Server**
 >
---8<-- "docs/challenging-sql-problems/solutions/bronze/temperature-anomaly-detection--sql-server.sql"
+--8<-- "docs/challenging-sql-problems/solutions/bronze/temperature-anomaly-detection--tsql.sql"

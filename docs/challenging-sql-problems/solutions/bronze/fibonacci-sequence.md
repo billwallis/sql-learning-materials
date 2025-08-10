@@ -75,4 +75,4 @@ Some SQL solutions per database are provided below.
 <!-- prettier-ignore -->
 > SUCCESS: **SQL Server**
 >
---8<-- "docs/challenging-sql-problems/solutions/bronze/fibonacci-sequence--sql-server.sql"
+--8<-- "docs/challenging-sql-problems/solutions/bronze/fibonacci-sequence--tsql.sql"
