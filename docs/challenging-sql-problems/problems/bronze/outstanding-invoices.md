@@ -79,7 +79,9 @@ The solution can be found at:
 >
 > For databases that support it, use [an `ASOF` join](../../../everything-about-joins/syntax/timestamp-joins.md) to use the latest exchange rate for each invoice (as of the time of the invoice).
 >
-> For databases that don't support `ASOF` joins, use any other method to get the exchange rates for each invoice, such as a correlated subquery.
+> For databases that don't support `ASOF` joins, use any other method to get the exchange rates for each invoice. The video below explains how `ASOF` joins work, and shows two alternatives for databases that don't support them:
+>
+> - [SQL ASOF Join (DuckDB, Snowflake)](https://youtu.be/zWY36adlP_c)
 
 <!-- prettier-ignore -->
 >? TIP: **Hint 2**
