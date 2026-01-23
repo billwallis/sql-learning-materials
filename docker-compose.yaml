@@ -6,10 +6,13 @@
 
 services:
   clickhouse:
-    image: clickhouse/clickhouse-server:24.8
+    image: clickhouse/clickhouse-server:25.12
     container_name: ClickHouse
     ports: ["8123:8123"]
     profiles: ["skip"]
+    environment:
+      CLICKHOUSE_PASSWORD: Test@12345
+      CLICKHOUSE_USER: default
     volumes:
       - &shared-volume
         type: bind
