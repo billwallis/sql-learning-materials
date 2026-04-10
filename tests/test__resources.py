@@ -133,7 +133,7 @@ def test__resource__get_resource(
 
     import urllib.request  # noqa: PLC0415
 
-    def mock_urlretrieve(url, filename):
+    def mock_urlretrieve(url: str, filename: str) -> None:
         """
         Mock the ``urlretrieve`` function, which downloads a file from ``url``
         and saves it to ``filename``.

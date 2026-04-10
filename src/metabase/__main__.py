@@ -145,7 +145,7 @@ class MetabaseConnector:
             self.login()
 
     @property
-    def headers(self):
+    def headers(self) -> dict:
         headers_ = {
             "Content-Type": "application/json",
             "Accept": "application/json",

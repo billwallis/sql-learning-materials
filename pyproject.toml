@@ -1,3 +1,5 @@
+# yaml-language-server: $schema=https://json.schemastore.org/pyproject.json
+
 [build-system]
 requires = ["setuptools"]
 build-backend = "setuptools.build_meta"
@@ -10,7 +12,7 @@ authors = [{name = "billwallis"}]
 readme = "README.md"
 keywords = ["sql", "sql-server", "postgres", "sqlite", "duckdb"]
 urls = { Repository = "https://github.com/billwallis/sql-learning-materials" }
-requires-python = ">=3.11,<4.0"
+requires-python = ">=3.11"
 dependencies = [
     "db-query-profiler>=0.0.6",
     "duckdb>=1.1.3",
@@ -23,12 +25,11 @@ dependencies = [
 
 [dependency-groups]
 dev = [
-    "coverage-badge>=1.1.0",
-    "pre-commit>=4.1.0",
+    "pre-commit>=4.5.1",
 ]
 test = [
-    "pytest>=8.3.5",
-    "pytest-cov>=6.0.0",
+    "pytest>=9.0.2",
+    "pytest-cov>=7.0.0",
 ]
 docs = [
     "markdown-callouts>=0.4.0",
@@ -60,8 +61,25 @@ skip-magic-trailing-comma = false
 line-ending = "auto"
 
 [tool.ruff.lint]
-select = ["F", "I", "N", "PL", "R", "RUF", "S", "UP", "W"]
-ignore = []
+select = [
+    "ANN",   # flake8-annotations
+    "B",     # flake8-bugbear
+    "E",     # pycodestyle-error
+    "F",     # Pyflakes
+    "FURB",  # refurb
+    "I",     # isort
+    "N",     # pep8-naming
+    "PL",    # Pylint
+    "PERF",  # Perflint
+    "RUF",   # Ruff-specific
+    "S",     # flake8-bandit
+    "UP",    # pyupgrade
+    "W",     # pycodestyle-warning
+]
+ignore = [
+    "ANN401",  # Dynamically typed expressions (typing.Any) are disallowed
+    "E501",    # Line too long
+]
 fixable = ["ALL"]
 unfixable = []
 # Allow unused variables when underscore-prefixed
@@ -70,7 +88,9 @@ dummy-variable-rgx = "^(_+|(_+[a-zA-Z0-9_]*[a-zA-Z0-9]+?))$"
 # https://github.com/astral-sh/ruff/issues/4368
 [tool.ruff.lint.extend-per-file-ignores]
 "tests/**/*.py" = [
-    "S101",    #  Use of `assert` detected
-    "PLR2004", #  Magic value used in comparison
-    "PLR0913", #  Too many arguments in function definition
+    "ANN001",   # Missing type annotation for function argument
+    "ANN201",   # Missing return type annotation for public function
+    "S101",     # Use of `assert` detected
+    "PLR2004",  # Magic value used in comparison
+    "PLR0913",  # Too many arguments in function definition
 ]
