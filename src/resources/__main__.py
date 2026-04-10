@@ -135,7 +135,7 @@ class Resource:
         self.database_file = database_file
         self.skip = skip
 
-    def __str__(self):
+    def __str__(self) -> str:
         return (
             f"Resource("
             f"type_='{self.type}', "
@@ -147,7 +147,7 @@ class Resource:
             f")"
         )
 
-    def __repr__(self):
+    def __repr__(self) -> str:
         return str(self)
 
     @classmethod

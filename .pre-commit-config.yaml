@@ -1,3 +1,4 @@
+# yaml-language-server: $schema=https://json.schemastore.org/pre-commit-config.json
 ---
 ci:
   autoupdate_schedule: quarterly
@@ -21,21 +22,34 @@ repos:
       - id: check-yaml
       - id: check-toml
       - id: check-ast
+      - id: detect-private-key
+
+  - repo: https://github.com/pre-commit-ci/pre-commit-ci-config
+    rev: v1.6.1
+    hooks:
+      - id: check-pre-commit-ci-config
 
   - repo: https://github.com/astral-sh/uv-pre-commit
-    rev: 0.11.3 # reminder: keep aligned with the GitHub actions
+    rev: 0.11.3
     hooks:
       - id: uv-lock
-
-  # Formatting
-  - repo: https://github.com/pre-commit/mirrors-prettier
-    rev: v4.0.0-alpha.8
-    hooks:
-      - id: prettier
 
   - repo: https://github.com/astral-sh/ruff-pre-commit
     rev: v0.15.9
     hooks:
-      - id: ruff
+      - id: ruff-check
         args: ["--fix"]
       - id: ruff-format
+
+  - repo: https://github.com/billwallis/bills-hooks
+    rev: v0.0.13
+    hooks:
+      - id: banned-python-code
+      - id: check-no-commit-comment
+      - id: tidy-gitkeep
+
+  - repo: https://github.com/python-jsonschema/check-jsonschema
+    rev: 0.37.1
+    hooks:
+      - id: check-github-workflows
+      - id: check-compose-spec
