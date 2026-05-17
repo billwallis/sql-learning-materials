@@ -10,8 +10,9 @@ version = "0.0.0"
 description = "SQL scripts that demonstrate various features and concepts."
 authors = [{name = "billwallis"}]
 readme = "README.md"
+license-files = ["LICENSE"]
 keywords = ["sql", "sql-server", "postgres", "sqlite", "duckdb"]
-urls = { Repository = "https://github.com/billwallis/sql-learning-materials" }
+urls = {Repository = "https://github.com/billwallis/sql-learning-materials"}
 requires-python = ">=3.11"
 dependencies = [
     "db-query-profiler>=0.0.6",
@@ -25,10 +26,11 @@ dependencies = [
 
 [dependency-groups]
 dev = [
+    "poethepoet>=0.42.1",
     "pre-commit>=4.5.1",
 ]
 test = [
-    "pytest>=9.0.2",
+    "pytest>=9.0.3",
     "pytest-cov>=7.0.0",
 ]
 docs = [
@@ -44,9 +46,52 @@ docs = [
 packages = ["src"]
 
 
+[tool.uv]
+required-version = ">=0.8"
+default-groups = "all"
+package = false
+
+
+[tool.poe]
+verbosity = -1
+envfile.optional = ".env"
+
+[tool.poe.tasks]
+install.shell = """
+    uv sync --refresh
+    uv run pre-commit install --install-hooks
+"""
+upgrade.shell = """
+    uv sync --refresh --upgrade
+    uv run pre-commit autoupdate
+"""
+test = "uv run pytest -vvv"
+
+[tool.poe.tasks.lint]
+control.expr = "sys.platform"
+
+[[tool.poe.tasks.lint.switch]]
+case = "win32"
+shell = """
+    echo '=== pre-commit checks ==='
+    SKIP=identity uv run pre-commit run --all-files --hook-stage pre-commit
+"""
+
+[[tool.poe.tasks.lint.switch]]
+shell = """
+    echo '\\033[0;34mpre-commit checks\\033[0m'
+    SKIP=identity uv run pre-commit run --all-files --hook-stage pre-commit
+"""
+
+
 [tool.pytest.ini_options]
-addopts = "--cov=src --cov-report term-missing"
+addopts = "--cov=src"
 testpaths = ["tests"]
+
+[tool.coverage]
+run.branch = true
+report.fail_under = 0
+report.show_missing = true
 
 
 [tool.ruff]
