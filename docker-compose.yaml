@@ -41,7 +41,7 @@ services:
 
   postgres:
     build: { context: ".", dockerfile: "dockerfiles/postgres.Dockerfile" }
-    image: sql-learning-materials/postgres:16.2
+    image: sql-learning-materials/postgres:18.4
     container_name: PostgreSQL
     ports: ["5432:5432"]
     profiles: ["build"]

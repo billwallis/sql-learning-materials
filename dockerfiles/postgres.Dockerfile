@@ -1,4 +1,4 @@
-FROM postgres:16.2
+FROM postgres:18.4
 
 ###
 # This expects some files to exist at the locations given below. The
