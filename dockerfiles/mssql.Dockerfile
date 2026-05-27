@@ -1,4 +1,4 @@
-FROM mcr.microsoft.com/mssql/server:2022-CU12-GDR1-ubuntu-22.04
+FROM mcr.microsoft.com/mssql/server:2025-CU5-ubuntu-24.04
 ENV SA_PASSWORD="Test@12345"
 
 ###
@@ -13,11 +13,11 @@ COPY src/resources/data/mssql/AdventureWorks2022.bak /.
 COPY src/resources/data/mssql/AdventureWorksDW2022.bak /.
 
 RUN /opt/mssql/bin/sqlservr --accept-eula & sleep 10 \
-    && /opt/mssql-tools/bin/sqlcmd -S localhost -U SA -P "Test@12345" \
+    && /opt/mssql-tools18/bin/sqlcmd -C -S localhost -U SA -P "Test@12345" \
       -Q "RESTORE DATABASE AdventureWorks2022 FROM DISK='/AdventureWorks2022.bak' WITH \
             MOVE 'AdventureWorks2022'     TO '/var/opt/mssql/data/AdventureWorks2022.mdf', \
             MOVE 'AdventureWorks2022_log' TO '/var/opt/mssql/data/AdventureWorks2022_log.ldf'" \
-    && /opt/mssql-tools/bin/sqlcmd -S localhost -U SA -P "Test@12345" \
+    && /opt/mssql-tools18/bin/sqlcmd -C -S localhost -U SA -P "Test@12345" \
       -Q "RESTORE DATABASE AdventureWorksDW2022 FROM DISK='/AdventureWorksDW2022.bak' WITH \
             MOVE 'AdventureWorksDW2022' TO '/var/opt/mssql/data/AdventureWorksDW2022.mdf', \
             MOVE 'AdventureWorksDW2022_log' TO '/var/opt/mssql/data/AdventureWorksDW2022_log.ldf'" \

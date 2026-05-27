@@ -21,7 +21,7 @@ services:
 
   mssql:
     build: { context: ".", dockerfile: "dockerfiles/mssql.Dockerfile" }
-    image: sql-learning-materials/mssql:2022
+    image: sql-learning-materials/mssql:2025
     container_name: SQL-Server
     ports: ["1433:1433"]
     profiles: ["build"]
