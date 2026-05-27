@@ -7,7 +7,7 @@
 
 [![SQL Server](https://img.shields.io/badge/SQL%20Server-2022-teal.svg)](https://www.microsoft.com/en-gb/sql-server/sql-server-downloads)
 [![MySQL](https://img.shields.io/badge/MySQL-8.4-teal.svg)](https://dev.mysql.com/downloads/mysql/)
-[![PostgreSQL](https://img.shields.io/badge/PostgreSQL-16.2-teal.svg)](https://www.postgresql.org/download/)
+[![PostgreSQL](https://img.shields.io/badge/PostgreSQL-18.4-teal.svg)](https://www.postgresql.org/download/)
 [![ClickHouse](https://img.shields.io/badge/ClickHouse-25.12-teal.svg)](https://clickhouse.com/docs/en/install)
 [![SQLite](https://img.shields.io/badge/SQLite-3.45-teal.svg)](https://www.sqlite.org/index.html)
 [![DuckDB](https://img.shields.io/badge/DuckDB-1.1-teal.svg)](https://duckdb.org/)
