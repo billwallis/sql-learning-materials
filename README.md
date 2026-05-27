@@ -5,7 +5,7 @@
 [![Docker](https://img.shields.io/badge/Docker-24.0.5-blue.svg)](https://www.docker.com/)
 [![GitHub last commit](https://img.shields.io/github/last-commit/billwallis/sql-learning-materials)](https://shields.io/badges/git-hub-last-commit-by-committer)
 
-[![SQL Server](https://img.shields.io/badge/SQL%20Server-2022-teal.svg)](https://www.microsoft.com/en-gb/sql-server/sql-server-downloads)
+[![SQL Server](https://img.shields.io/badge/SQL%20Server-2025-teal.svg)](https://www.microsoft.com/en-gb/sql-server/sql-server-downloads)
 [![MySQL](https://img.shields.io/badge/MySQL-8.4-teal.svg)](https://dev.mysql.com/downloads/mysql/)
 [![PostgreSQL](https://img.shields.io/badge/PostgreSQL-18.4-teal.svg)](https://www.postgresql.org/download/)
 [![ClickHouse](https://img.shields.io/badge/ClickHouse-25.12-teal.svg)](https://clickhouse.com/docs/en/install)
