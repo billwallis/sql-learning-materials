@@ -1,6 +1,6 @@
 <div align="center">
 
-[![Python](https://img.shields.io/badge/Python-3.11+-blue.svg)](https://www.python.org/downloads/)
+[![Python](https://img.shields.io/badge/Python-3.13+-blue.svg)](https://www.python.org/downloads/)
 [![uv](https://img.shields.io/endpoint?url=https://raw.githubusercontent.com/astral-sh/uv/main/assets/badge/v0.json)](https://github.com/astral-sh/uv)
 [![Docker](https://img.shields.io/badge/Docker-24.0.5-blue.svg)](https://www.docker.com/)
 [![GitHub last commit](https://img.shields.io/github/last-commit/billwallis/sql-learning-materials)](https://shields.io/badges/git-hub-last-commit-by-committer)
@@ -10,7 +10,7 @@
 [![PostgreSQL](https://img.shields.io/badge/PostgreSQL-18.4-teal.svg)](https://www.postgresql.org/download/)
 [![ClickHouse](https://img.shields.io/badge/ClickHouse-25.12-teal.svg)](https://clickhouse.com/docs/en/install)
 [![SQLite](https://img.shields.io/badge/SQLite-3.45-teal.svg)](https://www.sqlite.org/index.html)
-[![DuckDB](https://img.shields.io/badge/DuckDB-1.1-teal.svg)](https://duckdb.org/)
+[![DuckDB](https://img.shields.io/badge/DuckDB-1.5-teal.svg)](https://duckdb.org/)
 
 </div>
 
@@ -55,7 +55,7 @@ To install these, follow the instructions on their websites:
 
 After installing the pre-requisites and cloning this repo, just run the `resources` package to download the files needed to feed into the SQL Server and PostgreSQL databases before running Docker's `compose` command.
 
-```bash
+```shell
 uv sync --all-groups
 python -m src.resources
 docker compose --profile build up --detach
