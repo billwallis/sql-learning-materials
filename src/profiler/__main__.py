@@ -2,6 +2,7 @@
 Time the queries in the queries directory.
 """
 
+import pathlib
 import sqlite3
 
 import db_query_profiler
@@ -11,8 +12,10 @@ import pyodbc
 
 from src import SRC
 
-Connection = db_query_profiler.query_timer.DatabaseConnection
+HERE = pathlib.Path(__file__).resolve().parent
 DB_PATH = SRC / "resources/data"
+
+type Connection = db_query_profiler.query_timer.DatabaseConnection
 
 
 def sqlite_connector() -> Connection:
@@ -53,7 +56,10 @@ def main() -> None:
         "duckdb": duckdb_connector,
         "mssql": mssql_connector,
         "postgres": postgres_connector,
-    }["postgres"]
+    }["duckdb"]
+
+    setup_sql = (HERE / "setup.sql").read_text(encoding="utf-8")
+    db_conn().execute(setup_sql)
 
     db_query_profiler.time_queries(
         conn=db_conn(),
