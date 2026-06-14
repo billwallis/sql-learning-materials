@@ -1,9 +1,10 @@
-<div align="center">
+<span align="center">
 
 [![Python](https://img.shields.io/badge/Python-3.13+-blue.svg)](https://www.python.org/downloads/)
 [![uv](https://img.shields.io/endpoint?url=https://raw.githubusercontent.com/astral-sh/uv/main/assets/badge/v0.json)](https://github.com/astral-sh/uv)
 [![Docker](https://img.shields.io/badge/Docker-24.0.5-blue.svg)](https://www.docker.com/)
-[![GitHub last commit](https://img.shields.io/github/last-commit/billwallis/sql-learning-materials)](https://shields.io/badges/git-hub-last-commit-by-committer)
+[![pre-commit.ci status](https://results.pre-commit.ci/badge/github/billwallis/sql-learning-materials/main.svg)](https://results.pre-commit.ci/latest/github/billwallis/sql-learning-materials/main)
+[![GitHub last commit](https://img.shields.io/github/last-commit/billwallis/sql-learning-materials)](https://shields.io/badges/git-hub-last-commit)
 
 [![SQL Server](https://img.shields.io/badge/SQL%20Server-2025-teal.svg)](https://www.microsoft.com/en-gb/sql-server/sql-server-downloads)
 [![MySQL](https://img.shields.io/badge/MySQL-8.4-teal.svg)](https://dev.mysql.com/downloads/mysql/)
@@ -12,7 +13,7 @@
 [![SQLite](https://img.shields.io/badge/SQLite-3.45-teal.svg)](https://www.sqlite.org/index.html)
 [![DuckDB](https://img.shields.io/badge/DuckDB-1.5-teal.svg)](https://duckdb.org/)
 
-</div>
+</span>
 
 ---
 
@@ -91,3 +92,12 @@ The Metabase instance will be launched on [`localhost:3000`](http://localhost:30
 ...you will have to make sure that you have enabled the virtualisation framework and Rosetta for amd64 support, see the following GitHub issue and comment:
 
 - https://github.com/microsoft/mssql-docker/issues/668#issuecomment-1436802153
+
+
+## Contributing
+
+Install [uv](https://docs.astral.sh/uv/getting-started/installation/) and then install the dependencies:
+
+```shell
+uvx --from poethepoet poe install
+```
