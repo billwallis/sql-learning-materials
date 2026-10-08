@@ -1,7 +1,7 @@
 # yaml-language-server: $schema=https://json.schemastore.org/pyproject.json
 [build-system]
-requires = ["uv_build"]
-build-backend = "uv_build"
+requires = ["setuptools"]
+build-backend = "setuptools.build_meta"
 
 [project]
 name = "sql-learning-materials"
@@ -29,8 +29,8 @@ dev = [
     "pre-commit>=4.6.0",
 ]
 test = [
-    "coverage>=7.13.5",
     "covdefaults>=2.3.0",
+    "coverage>=7.13.5",
     "pytest>=9.0.3",
 ]
 docs = [
@@ -42,28 +42,20 @@ docs = [
 ]
 
 
-[tool.uv]
-default-groups = "all"
-package = false
-
-
 [tool.poe]
 verbosity = -1
 envfile.optional = ".env"
 
 [tool.poe.tasks]
 install.shell = """
-    uv sync --refresh
-    uv run pre-commit install --install-hooks
-"""
-upgrade.shell = """
-    uv sync --refresh --upgrade
-    uv run pre-commit autoupdate
+    pip install --editable . --group dev --group test --group docs
+    pre-commit install --install-hooks
 """
 test.shell = """
-    uv run coverage run -m pytest -vvv
-    uv run coverage report --no-skip-covered
-    uv run coverage xml --quiet
+    coverage run -m pytest -vvv
+    coverage report --no-skip-covered --include 'src/*'
+    coverage report --no-skip-covered --include 'tests/*'
+    coverage xml --quiet
 """
 
 [tool.poe.tasks.lint]
@@ -73,17 +65,17 @@ control.expr = "sys.platform"
 case = "win32"
 shell = """
     echo '=== pre-commit checks ==='
-    SKIP=identity uv run pre-commit run --all-files --hook-stage pre-commit
+    SKIP=identity pre-commit run --all-files --hook-stage pre-commit
     echo '=== pre-push checks ==='
-    SKIP=identity uv run pre-commit run --all-files --hook-stage pre-push
+    SKIP=identity pre-commit run --all-files --hook-stage pre-push
 """
 
 [[tool.poe.tasks.lint.switch]]
 shell = """
     echo '\\033[0;34mpre-commit checks\\033[0m'
-    SKIP=identity uv run pre-commit run --all-files --hook-stage pre-commit
+    SKIP=identity pre-commit run --all-files --hook-stage pre-commit
     echo '\\033[0;34mpre-push checks\\033[0m'
-    SKIP=identity uv run pre-commit run --all-files --hook-stage pre-push
+    SKIP=identity pre-commit run --all-files --hook-stage pre-push
 """
 
 
@@ -91,56 +83,10 @@ shell = """
 testpaths = ["tests"]
 
 [tool.coverage]
+run.source = ["src", "tests"]
 run.plugins = ["covdefaults"]  # https://youtu.be/70T6OxKwxm0
 report.fail_under = 80
 report.exclude_lines = [
     "@pytest.mark.skip",
     "@pytest.mark.xfail",
-]
-
-
-[tool.ruff]
-line-length = 80
-indent-width = 4
-target-version = "py313"
-
-[tool.ruff.format]
-quote-style = "double"
-indent-style = "space"
-skip-magic-trailing-comma = false
-line-ending = "auto"
-
-[tool.ruff.lint]
-select = [
-    "ANN",   # flake8-annotations
-    "B",     # flake8-bugbear
-    "E",     # pycodestyle-error
-    "F",     # Pyflakes
-    "FURB",  # refurb
-    "I",     # isort
-    "N",     # pep8-naming
-    "PL",    # Pylint
-    "PERF",  # Perflint
-    "RUF",   # Ruff-specific
-    "S",     # flake8-bandit
-    "UP",    # pyupgrade
-    "W",     # pycodestyle-warning
-]
-ignore = [
-    "ANN401",  # Dynamically typed expressions (typing.Any) are disallowed
-    "E501",    # Line too long
-]
-fixable = ["ALL"]
-unfixable = []
-# Allow unused variables when underscore-prefixed
-dummy-variable-rgx = "^(_+|(_+[a-zA-Z0-9_]*[a-zA-Z0-9]+?))$"
-
-# https://github.com/astral-sh/ruff/issues/4368
-[tool.ruff.lint.extend-per-file-ignores]
-"tests/**/*.py" = [
-    "ANN001",   # Missing type annotation for function argument
-    "ANN201",   # Missing return type annotation for public function
-    "S101",     # Use of `assert` detected
-    "PLR2004",  # Magic value used in comparison
-    "PLR0913",  # Too many arguments in function definition
 ]
