@@ -119,7 +119,7 @@ class Resource:
     database_file: pathlib.Path | None
     skip: bool
 
-    def __init__(  # noqa: PLR0913
+    def __init__(  # noqa: PLR0913, PLR0917
         self,
         type_: DatabaseType,
         name: str,
