@@ -26,5 +26,5 @@ jobs:
         with:
           python-version-file: pyproject.toml
           cache: "pip"
-      - run: pip install --editable . --group test
+      - run: pip install --editable . --group docs
       - run: mkdocs gh-deploy --force
