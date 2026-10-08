@@ -1,7 +1,6 @@
 <span align="center">
 
 [![Python](https://img.shields.io/badge/Python-3.13+-blue.svg)](https://www.python.org/downloads/)
-[![uv](https://img.shields.io/endpoint?url=https://raw.githubusercontent.com/astral-sh/uv/main/assets/badge/v0.json)](https://github.com/astral-sh/uv)
 [![Docker](https://img.shields.io/badge/Docker-24.0.5-blue.svg)](https://www.docker.com/)
 [![pre-commit.ci status](https://results.pre-commit.ci/badge/github/billwallis/sql-learning-materials/main.svg)](https://results.pre-commit.ci/latest/github/billwallis/sql-learning-materials/main)
 [![GitHub last commit](https://img.shields.io/github/last-commit/billwallis/sql-learning-materials)](https://shields.io/badges/git-hub-last-commit)
@@ -44,11 +43,10 @@ The docs are built using [MkDocs](https://www.mkdocs.org/) and the [Material for
 
 ## Pre-requisites
 
-This project uses [uv](https://docs.astral.sh/uv/) to manage the Python dependencies and [Docker](https://www.docker.com/) to spin up the databases.
+This is largely a [Python](https://www.python.org/) project which uses [Docker](https://www.docker.com/) to spin up the databases.
 
 To install these, follow the instructions on their websites:
 
-- https://docs.astral.sh/uv/getting-started/installation/
 - https://www.python.org/downloads/
 - https://docs.docker.com/get-docker/
 
@@ -57,7 +55,8 @@ To install these, follow the instructions on their websites:
 After installing the pre-requisites and cloning this repo, just run the `resources` package to download the files needed to feed into the SQL Server and PostgreSQL databases before running Docker's `compose` command.
 
 ```shell
-uv sync --all-groups
+pip install --editable . --group dev --group test --group docs
+pre-commit install --install-hooks
 python -m src.resources
 docker compose --profile build up --detach
 mkdocs build
@@ -94,8 +93,9 @@ The SQLite and DuckDB databases are just files, so using Docker for these is ove
 
 ## Contributing
 
-Install [uv](https://docs.astral.sh/uv/getting-started/installation/) and then install the dependencies:
+Install the dependencies:
 
 ```shell
-uvx --from poethepoet poe install
+pip install --editable . --group dev --group test --group docs
+pre-commit install --install-hooks
 ```
