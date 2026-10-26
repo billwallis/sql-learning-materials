@@ -20,6 +20,7 @@ repos:
       - id: trailing-whitespace
       - id: end-of-file-fixer
       - id: mixed-line-ending
+        args: ["--fix", "lf"]
       - id: check-added-large-files
       - id: check-json
       - id: check-yaml
@@ -27,15 +28,25 @@ repos:
       - id: check-ast
       - id: detect-private-key
 
+  - repo: https://github.com/pre-commit/pre-commit
+    rev: v4.7.0
+    hooks:
+      - id: validate_manifest
+
   - repo: https://github.com/pre-commit-ci/pre-commit-ci-config
     rev: v1.6.1
     hooks:
       - id: check-pre-commit-ci-config
 
   - repo: https://github.com/billwallis/bills-hooks
-    rev: v0.0.16
+    rev: v0.0.17
     hooks:
       - id: banned-python-code
+      - id: check-filename-pattern
+        files: '^tests/.*\.py$'
+        exclude: '^.*/(conftest|__init__)\.py$'
+        args: ["--name-only", "--regex", '^test__.*\.py$']
+      - id: check-github-codeowners
       - id: check-no-commit-comment
       - id: tidy-gitkeep
 
@@ -59,7 +70,7 @@ repos:
         files: pyproject.toml
         args: ["--schemafile", "https://json.schemastore.org/pyproject.json"]
       - <<: *check-jsonschema-config
-        id: check-pre-commit-hooks-schema
-        name: Validate .pre-commit-hooks.yaml schema
-        files: .pre-commit-hooks.yaml
-        args: ["--schemafile", "https://json.schemastore.org/pre-commit-hooks.json"]
+        id: check-mkdocs
+        name: Validate mkdocs.yml schema
+        files: mkdocs.yml
+        args: ["--schemafile", "https://www.schemastore.org/mkdocs-1.6.json"]

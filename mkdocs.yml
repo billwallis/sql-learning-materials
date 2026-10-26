@@ -1,3 +1,4 @@
+# yaml-language-server: $schema=https://www.schemastore.org/mkdocs-1.6.json
 ---
 site_name: SQL Learning Materials
 site_url: https://github.com/billwallis/sql-learning-materials/docs/
